@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="./libs/materialfont/icon.css">
+		<link rel="stylesheet" href="./libs/mdl/material.min.css">
+		<script src="./libs/jquery-3.3.1.js"></script>
+
+		<script src="./libs/mdl/material.js"></script>
+
+		<script src="./libs/angular.min.js"></script>
+
+		<script src="./libs/svg_dev.js"></script>
+
+		<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	</head>
+
+	<body>
+		<div class="main-container">
+			<h2>Multiplication Table Asimetry</h2>
+			<div ng-app="mainApp" ng-controller="studentController">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col-tablet">
+						<form style="text-align: center">
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" 
+								ng-model="calcData.multiplier"
+								type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+								<label class="mdl-textfield__label" for="sample4">Multiplier</label>
+								<span class="mdl-textfield__error">Input is not a number!</span>
+							</div>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input"
+								ng-model="calcData.points"
+								type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+								<label class="mdl-textfield__label" for="sample4">Ammount of points</label>
+								<span class="mdl-textfield__error">Input is not a number!</span>
+							</div>
+							<button
+							ng-click="calculate()"
+							class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+								Generate
+							</button>
+						</form>
+					</div>
+					<div class="mdl-cell mdl-cell--8" id="graphContainer_a">
+						<div id="grapDrawing">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>
